@@ -1,0 +1,31 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: rest-api-with-auth-sqlserver
+    environment:
+      SA_PASSWORD: "Password@1234"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1434:1433"
+    networks:
+      - app-network
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+  redis:
+    image: redis/redis-stack:latest
+    container_name: rest-api-with-auth-redis
+    ports:
+      - "6379:6379"
+      - "8001:8001"
+    networks:
+      - app-network
+    volumes:
+      - redis_data:/data
+     
+networks:
+  app-network:
+
+volumes:
+  sqlserver_data:
+  redis_data:
