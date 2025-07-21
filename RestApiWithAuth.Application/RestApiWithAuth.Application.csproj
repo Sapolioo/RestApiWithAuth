@@ -6,4 +6,26 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\Behaviors\" />
+    <Folder Include="Common\DTOs\" />
+    <Folder Include="Common\Mappings\" />
+    <Folder Include="Products\Commands\" />
+    <Folder Include="Products\Queries\" />
+    <Folder Include="Products\Validators\" />
+    <Folder Include="Orders\Commands\" />
+    <Folder Include="Orders\Queries\" />
+    <Folder Include="Orders\Validators\" />
+    <Folder Include="Users\Validators\" />
+    <Folder Include="Users\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="13.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RestApiWithAuth.Domain\RestApiWithAuth.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
